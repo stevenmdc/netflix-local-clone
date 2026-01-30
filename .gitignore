@@ -49,7 +49,7 @@ next-env.d.ts
 # .md files
 AGENTS.md
 CLAUDE.md
-TO-DO.md 
+TO-DO.md
 
 # claude files
-.claude
+.claude/

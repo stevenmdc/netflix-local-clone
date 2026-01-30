@@ -1,8 +1,12 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
-import { ChevronLeft, Play } from "lucide-react"
+import { ChevronLeft } from "lucide-react"
+import videojs from "video.js"
+import "video.js/dist/video-js.css"
+
+type VideoJsPlayer = ReturnType<typeof videojs>
 
 interface VideoPlayerProps {
   src: string
@@ -11,31 +15,46 @@ interface VideoPlayerProps {
 
 export function VideoPlayer({ src, poster }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const playerRef = useRef<VideoJsPlayer | null>(null)
   const router = useRouter()
-  const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
+    if (!videoRef.current) return
+
+    const player = videojs(videoRef.current, {
+      controls: true,
+      autoplay: false,
+      preload: "metadata",
+      poster: poster,
+      responsive: true,
+      fluid: true,
+      playbackRates: [0.5, 1, 1.25, 1.5, 2],
+    })
+
+    playerRef.current = player
+
+    // Restore saved playback position
     const savedTime = localStorage.getItem(`video:${src}:time`)
-    if (savedTime && videoRef.current) {
-      videoRef.current.currentTime = parseFloat(savedTime)
+    if (savedTime) {
+      player.currentTime(parseFloat(savedTime))
     }
-  }, [src])
 
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      localStorage.setItem(
-        `video:${src}:time`,
-        videoRef.current.currentTime.toString()
-      )
+    // Save playback position on timeupdate
+    const handleTimeUpdate = () => {
+      if (playerRef.current !== null) {
+        localStorage.setItem(`video:${src}:time`, String(playerRef.current.currentTime()))
+      }
     }
-  }
+    player.on("timeupdate", handleTimeUpdate)
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
+    return () => {
+      player.off("timeupdate", handleTimeUpdate)
+      if (playerRef.current) {
+        playerRef.current.dispose()
+        playerRef.current = null
+      }
     }
-  }
+  }, [src, poster])
 
   const handleGoBack = () => {
     router.back()
@@ -43,20 +62,18 @@ export function VideoPlayer({ src, poster }: VideoPlayerProps) {
 
   return (
     <div className="relative h-full w-full bg-black">
-      <video
-        ref={videoRef}
-        className="h-full w-full"
-        controls
-        poster={poster}
-        onTimeUpdate={handleTimeUpdate}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        preload="metadata"
-      >
-        <source src={src} type="video/mp4" />
-        <source src={src.replace(/\.(mp4|mkv)$/i, ".webm")} type="video/webm" />
-        Votre navigateur ne supporte pas la vidéo HTML5.
-      </video>
+      <div data-vjs-player>
+        <video
+          ref={videoRef}
+          className="video-js vjs-default-skin vjs-big-play-centered"
+        >
+          <source src={src} type="video/mp4" />
+          <source src={src.replace(/\.(mp4|mkv)$/i, ".webm")} type="video/webm" />
+          <p className="vjs-no-js">
+            Votre navigateur ne supporte pas la vidéo HTML5.
+          </p>
+        </video>
+      </div>
 
       {/* Bouton retour en haut à gauche */}
       <button
@@ -66,19 +83,6 @@ export function VideoPlayer({ src, poster }: VideoPlayerProps) {
       >
         <ChevronLeft size={24} />
       </button>
-
-      {/* Bouton play au centre (visible quand vidéo pas en lecture) */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center z-5">
-          <button
-            onClick={handlePlay}
-            className="bg-red-600 hover:bg-red-700 text-white p-6 rounded-full transition-colors shadow-lg"
-            aria-label="Lancer la vidéo"
-          >
-            <Play size={48} fill="currentColor" />
-          </button>
-        </div>
-      )}
     </div>
   )
 }
