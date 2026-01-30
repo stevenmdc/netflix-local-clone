@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import type { LocalTvEpisode } from "@/lib/local-media"
+import type { LocalTvEpisode } from "@/app/lib/local-media"
 
 interface LocalEpisodeCardProps {
   showId: string

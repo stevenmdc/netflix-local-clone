@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import type { LocalMovie } from "@/lib/local-media"
+import type { LocalMovie } from "@/app/lib/local-media"
 
 interface LocalMovieCardProps {
   movie: LocalMovie
