@@ -1,0 +1,105 @@
+{
+  "movies": [
+    {
+      "id": "guardians-of-the-galaxy-vol-3-2023-1080p-webrip-x264-aac5-1",
+      "title": "Guardians Of The Galaxy Vol 3 2023 1080p WEBRip x264 AAC5 1",
+      "year": null,
+      "videoUrl": "/media/movies/Guardians.Of.The.Galaxy.Vol.3.2023.1080p.WEBRip.x264.AAC5.1.mp4",
+      "thumbnail": null,
+      "backdrop": null
+    },
+    {
+      "id": "hacker-2016-1080p-brrip-x264-aac-etrg",
+      "title": "Hacker 2016 1080p BRRip x264 AAC-ETRG",
+      "year": null,
+      "videoUrl": "/media/movies/Hacker.2016.1080p.BRRip.x264.AAC-ETRG.mp4",
+      "thumbnail": null,
+      "backdrop": null
+    },
+    {
+      "id": "in-the-heart-of-the-sea-2015-1080p-bluray-x264-aac-etrg",
+      "title": "In the Heart of the Sea 2015 1080p BluRay x264 AAC-ETRG",
+      "year": null,
+      "videoUrl": "/media/movies/In.the.Heart.of.the.Sea.2015.1080p.BluRay.x264.AAC-ETRG.mp4",
+      "thumbnail": null,
+      "backdrop": null
+    },
+    {
+      "id": "stargate-continuum-2008-1080p-bluray-ddp-5-1-x265-edge2020",
+      "title": "Stargate Continuum 2008 1080p BluRay DDP 5 1 x265-EDGE2020",
+      "year": null,
+      "videoUrl": "/media/movies/Stargate.Continuum.2008.1080p.BluRay.DDP.5.1.x265-EDGE2020.mkv",
+      "thumbnail": null,
+      "backdrop": null
+    }
+  ],
+  "tvShows": [
+    {
+      "id": "cyberpunk-edgerunners",
+      "title": "cyberpunk-edgerunners",
+      "poster": "/media/tv-shows/cyberpunk-edgerunners/poster.jpg",
+      "episodes": [
+        {
+          "season": 1,
+          "episode": 1,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E01 - Let You Down.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E01 - Let You Down"
+        },
+        {
+          "season": 1,
+          "episode": 2,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E02 - Like A Boy.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E02 - Like A Boy"
+        },
+        {
+          "season": 1,
+          "episode": 3,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E03 - Smooth Criminal.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E03 - Smooth Criminal"
+        },
+        {
+          "season": 1,
+          "episode": 4,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E04 - Lucky You.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E04 - Lucky You"
+        },
+        {
+          "season": 1,
+          "episode": 5,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E05 - All Eyez On Me.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E05 - All Eyez On Me"
+        },
+        {
+          "season": 1,
+          "episode": 6,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E06 - Girl on Fire.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E06 - Girl on Fire"
+        },
+        {
+          "season": 1,
+          "episode": 7,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E07 - Stronger.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E07 - Stronger"
+        },
+        {
+          "season": 1,
+          "episode": 8,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E08 - Stay.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E08 - Stay"
+        },
+        {
+          "season": 1,
+          "episode": 9,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E09 - Humanity.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E09 - Humanity"
+        },
+        {
+          "season": 1,
+          "episode": 10,
+          "videoUrl": "/media/tv-shows/cyberpunk-edgerunners/S01/Cyberpunk - Edgerunners - S01E10 - My Moon My Man.mkv",
+          "title": "Cyberpunk - Edgerunners - S01E10 - My Moon My Man"
+        }
+      ]
+    }
+  ]
+}
