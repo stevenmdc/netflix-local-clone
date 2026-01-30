@@ -42,3 +42,14 @@ npm-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local settings
+/local-settings.json
+
+# .md files
+AGENTS.md
+CLAUDE.md
+TO-DO.md 
+
+# claude files
+.claude
